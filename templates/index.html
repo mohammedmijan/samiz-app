@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SAMIZ-Sharing</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="{{ url_for('static', filename='assets/img/avataaars.svg') }}"
+                alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Be Happy!!!</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Why are you depressed?</p>
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+
+    <!-- About Section-->
+
+    <!-- Contact Section-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Share with anonymous</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+
+                    <!-- Name input-->
+                    <!-- Message input-->
+                    <div class="container d-flex  flex-column"
+                        style="background-color: rgb(104, 243, 187); border-radius: 0.8em;">
+
+                        <ul class="lead mb-0" id="message_received" style="text-align: left;"></ul>
+                    </div>
+                    <div class="form-floating mb-3">
+
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
+                            style="height: 10rem" data-sb-validations="required"></textarea>
+                        <label for="message">Message</label>
+                        <div>
+                            <input class="form-check-input position-static" type="checkbox" id="checkboxcheck"
+                                value="1">
+                            <label for="inlineCheckbox1" style="font-size: 0.8em; color: red;">Depressed</label>
+                        </div>
+                        <p id="pop_up"></p>
+                    </div>
+                    <p style="color: rgb(252, 5, 5);">If anyone message a negetive one, copy it and <a href="/data_for_Model">click here....</a> 
+                    </p>
+                    <button class="btn btn-primary btn-xl" id="sendbutton" onclick="checkCheckbox()">Send</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Ward No- 04, Shahmir Pur, Karnauphully
+                        <br />
+                        Chittagong
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://web.facebook.com/profile.php?id=100016735687011" target="_blank"><i
+                        class="fab fa-fw fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/mohhammed-mizan-13a9b6184/" target="_blank"><i
+                        class="fab fa-fw fa-linkedin-in"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About SAMIZ</h4>
+                    <p class="lead mb-0">
+                        This messaging platform helps the depressed person for sharing in public being an anonymous
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Samiz 2022</small></div>
+    </div>
+    <!-- Portfolio Modals-->
+
+    <!-- Messaging app-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket;
+        $(document).ready(function () {
+            socket = io.connect(
+                "http://" + document.domain + ":" + location.port + "/"
+            );
+            socket.on('connect', function () {
+                socket.emit('join', {});
+            })
+
+            socket.on("status", function (da) {
+                for (let i = 0; i < da.length; i++) {
+                    const data = da[i];
+                    let result;
+                    if (data.dep == true) {
+                        result = '<li style="color: red;">' + data.msg + "</li>"
+                    }
+                    else {
+                        result = "<li>" + data.msg + "</li>"
+                    }
+                    if (data.msg == '') {
+                        result = '<li style="color:blue;">....Beep</li>'
+                    }
+                    else {
+                        result = result
+                    }
+
+                    $("#message_received").append(result);
+                }
+
+            })
+
+            socket.on("message", function (data) {
+                if (data.dep == 2) {
+                    pop_up = '<li style="color:green;">' + data.msg + '</li>'
+                    $("#pop_up").append(pop_up)
+                    $("#pop_up").val("")
+                }
+                else {
+                    let result;
+                    if (data.dep == true) {
+                        result = '<li style="color: red;">' + data.msg + "</li>"
+                    }
+                    else {
+                        result = "<li>" + data.msg + "</li>"
+                    }
+
+                    $("#message_received").append(result);
+                }
+
+            })
+
+            $('#sendbutton').on('click', function () {
+                message = $("#message").val();
+                $("#message").val('');
+                dep = document.getElementById('checkboxcheck');
+                socket.emit("message", { "msg": message, "dep": dep.checked });
+            });
+        });
+
+    </script>
+
+    <!--End Messaging app-->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
