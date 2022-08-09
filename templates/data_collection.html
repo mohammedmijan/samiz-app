@@ -136,7 +136,7 @@
         var socket;
         $(document).ready(function () {
             socket = io.connect(
-                "http://" + document.domain + ":" + location.port + "/data_for_Model"
+                "https://" + document.domain + ":" + location.port + "/data_for_Model"
             );
             socket.on("depression", function (data) {
                 $("#text_write").append("<p style='color:red;'>" + data + "</p>");
